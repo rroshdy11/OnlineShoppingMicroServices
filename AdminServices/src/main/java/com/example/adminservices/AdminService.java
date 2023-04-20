@@ -1,4 +1,4 @@
-package com.example.adminservice;
+package com.example.adminservices;
 
 import Admin.Admin;
 

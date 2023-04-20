@@ -43,5 +43,11 @@ namespace ShippingCompanyServices.Controllers
         {
             return _ShippingCompanyInterface.checkGeo(id,reqGeo);
         }
+        [HttpPost]
+        [Route("login")]
+        public string login(ShippingCompany shippingCompany)
+        {
+            return _ShippingCompanyInterface.login(shippingCompany);
+        }
     }
 }

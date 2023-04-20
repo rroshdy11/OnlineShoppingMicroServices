@@ -3,7 +3,7 @@ using ShippingCompanyServices.Models;
 
 namespace ShippingCompanyServices.Repository
 {
-    public class ShippingCompanyRepository:ShippingCompanyInterface
+    public class ShippingCompanyRepository : ShippingCompanyInterface
     {
         Context _db;
         public ShippingCompanyRepository(Context db)
@@ -14,21 +14,40 @@ namespace ShippingCompanyServices.Repository
         {
             return await _db.ShippingCompany.ToListAsync();
         }
+        public string login(ShippingCompany shippingCompany)
+        {
+            var ship = _db.ShippingCompany.Where(p => p.Name == shippingCompany.Name &&
+            p.Password==shippingCompany.Password).FirstOrDefault();
+            if (ship != null)
+            {
+                return "logged in";
+            }
+            return "Wrong Credentials";
+        }
         public string AddShippingCompany(ShippingCompany shippingCompany)
         {
             ShippingCompany ship = new ShippingCompany();
             ship.Name = shippingCompany.Name;
             ship.Geography = shippingCompany.Geography;
-            try
+            ship.Password = shippingCompany.Password;
+            var duplicate = _db.ShippingCompany.Where(p => p.Name == shippingCompany.Name).FirstOrDefault();
+            if (duplicate == null)
             {
-                _db.ShippingCompany.Add(ship);
-                _db.SaveChanges();
-                return "Done " + ship.Name;
+                if (ship.Password == null || ship.Geography == null || ship.Name == null ||
+                ship.Password == "" || ship.Geography == "" || ship.Name == "")
+                    return "empty entry please check your entry";
+                try
+                {
+                    _db.ShippingCompany.Add(ship);
+                    _db.SaveChanges();
+                    return "Done " + ship.Name;
+                }
+                catch (Exception ex)
+                {
+                    return ex.Message;
+                }
             }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
+            return "the name of company exsists";
         }
         public string UpdateShippingCompany(ShippingCompany shippingCompany)
         {
@@ -37,6 +56,7 @@ namespace ShippingCompanyServices.Repository
             {
                 ship.Name = shippingCompany.Name;
                 ship.Geography = shippingCompany.Geography;
+                ship.Password = shippingCompany.Password;
                 try
                 {
                     _db.SaveChanges();
