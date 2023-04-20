@@ -25,12 +25,6 @@ public class AdminService {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql");
     private EntityManager entityManager = emf.createEntityManager();
 
-    @GET
-    public String hello() {
-        return "Hello, Worlddd!";
-    }
-
-
     @POST
     @Path("/register")
     public String register( Admin admin) {
@@ -95,6 +89,24 @@ public class AdminService {
         } catch (SecurityException | IllegalStateException e) {
             e.printStackTrace();
             return "Error while deleting";
+        }
+    }
+    @PUT
+    @Path("/updateAdmin")
+    public String updateAdmin(Admin admin) {
+        try {
+            entityManager.getTransaction().begin();
+            Admin admin1 = entityManager.find(Admin.class, admin.getUsername());
+            if (admin1 == null) {
+                entityManager.getTransaction().rollback();
+                return "User does not exist";
+            }
+            entityManager.merge(admin);
+            entityManager.getTransaction().commit();
+            return "User Updated Successfully";
+        } catch (SecurityException | IllegalStateException e) {
+            e.printStackTrace();
+            return "Error while updating";
         }
     }
 
