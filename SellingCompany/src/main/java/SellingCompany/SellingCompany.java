@@ -16,7 +16,6 @@ public class SellingCompany {
     @Id
     private String name;
     private String password;
-    private String adminName;
 
 }
 

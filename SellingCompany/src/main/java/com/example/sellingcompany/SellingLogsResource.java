@@ -1,6 +1,7 @@
 package com.example.sellingcompany;
 
 import SellingCompany.SellingLogs;
+import jakarta.ejb.Singleton;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -13,23 +14,15 @@ import java.util.List;
 @Path("/v1/sellingLogs")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Stateless
+@Singleton
 public class SellingLogsResource {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql");
     private EntityManager entityManager = emf.createEntityManager();
-    @GET
-    public String hello() {
-        return "Hello, World!";
-    }
-    @GET
-    @Path("/getAllSellingLogs")
-    public List<SellingLogs> getAllAdmins() {
-        return entityManager.createQuery("SELECT s FROM SellingLogs s", SellingLogs.class).getResultList();
-    }
+
 
     @POST
-    @Path("/makeLog")
-    public String register( SellingLogs sellingLogs) {
+    @Path("/add")
+    public String addToLog( SellingLogs sellingLogs) {
         try {
             entityManager.getTransaction().begin();
             entityManager.persist(sellingLogs);
@@ -42,8 +35,14 @@ public class SellingLogsResource {
 
     }
 
+    @GET
+    @Path("/getAllSellingLogs")
+    public List<SellingLogs> getAllSellingLogs() {
+        return entityManager.createQuery("SELECT s FROM SellingLogs s", SellingLogs.class).getResultList();
+    }
+
     @DELETE
-    @Path("/deleteSellingLog/{id}")
+    @Path("/delete/{id}")
     public String deleteAdmin(@PathParam("id") int id) {
         try {
             entityManager.getTransaction().begin();

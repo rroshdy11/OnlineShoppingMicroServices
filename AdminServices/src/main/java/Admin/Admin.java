@@ -1,5 +1,6 @@
 package Admin;
 
+import jakarta.ejb.Stateful;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
+@Stateful
 public class Admin {
     @Id
     private String username;
