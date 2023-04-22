@@ -5,8 +5,8 @@
              version="3.0">
     <persistence-unit name="mysql" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>SellingCompany.SellingCompany</class>
-        <class>SellingCompany.SellingLogs</class>
+        <class>com.example.ShoppingApp.SellingCompany.SellingCompany</class>
+        <class>com.example.ShoppingApp.SellingLogs.SellingLogs</class>
             <properties>
                     <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
                     <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sellingcompanydata"/>
