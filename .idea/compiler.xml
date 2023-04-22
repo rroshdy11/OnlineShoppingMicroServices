@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ShoppingApp" />
+        <module name="ShippingService" />
         <module name="AdminServices" />
       </profile>
     </annotationProcessing>

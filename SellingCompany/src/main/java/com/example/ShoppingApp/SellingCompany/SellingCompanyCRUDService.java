@@ -10,11 +10,11 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
 
-@Path("/v1/sellingCompany")
+@Path("/v1/sellingCompanyCRUD")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Stateless
-public class SellingCompanyResource {
+public class SellingCompanyCRUDService {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql");
     private EntityManager entityManager = emf.createEntityManager();
 
@@ -61,28 +61,7 @@ public class SellingCompanyResource {
         }
         return password;
     }
-    @GET
-    @Path("/login")
-    public String login(SellingCompany sellingCompany){
-        try {
-            entityManager.getTransaction().begin();
-            SellingCompany sellingCompany1 = entityManager.find(SellingCompany.class,sellingCompany.getName());
-            if (sellingCompany1 == null) {
-                entityManager.getTransaction().rollback();
-                return "Selling Company does not exist";
-            }
-            if (sellingCompany1.getPassword().equals(sellingCompany.getPassword())) {
-                entityManager.getTransaction().commit();
-                return "Logged in Successfully ";
-            }
 
-            return "Wrong password";
-
-        } catch (SecurityException | IllegalStateException e) {
-            e.printStackTrace();
-            return "Error while logging in";
-        }
-    }
     @GET
     @Path("/getAllSellingCompanies")
     public List<SellingCompany> getAllSellingCompanies() {
