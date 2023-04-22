@@ -3,6 +3,7 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="AdminServices:war exploded" />
+      <artifact name="ShippingService:war exploded" />
       <artifact name="ShoppingApp:war exploded" />
     </artifacts-to-build>
   </component>
@@ -11,7 +12,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1c0559-209e-4f65-abbe-bc766b7c77cc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingCompany/SellingCompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingCompany/SellingCompanyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/Customer/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/Customer/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingCompany/SellingCompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingCompany/SellingCompanyService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +158,7 @@
       <workItem from="1682004156000" duration="159000" />
       <workItem from="1682004542055" duration="693000" />
       <workItem from="1682117507323" duration="828000" />
-      <workItem from="1682177870607" duration="3101000" />
+      <workItem from="1682177870607" duration="6189000" />
     </task>
     <servers />
   </component>

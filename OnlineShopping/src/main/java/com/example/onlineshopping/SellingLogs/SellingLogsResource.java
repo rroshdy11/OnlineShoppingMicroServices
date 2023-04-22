@@ -1,4 +1,4 @@
-package com.example.ShoppingApp.SellingLogs;
+package com.example.onlineshopping.SellingLogs;
 
 import jakarta.ejb.Singleton;
 import jakarta.persistence.EntityManager;

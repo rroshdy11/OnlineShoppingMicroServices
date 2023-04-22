@@ -1,6 +1,6 @@
-package com.example.ShoppingApp.SellingCompany;
+package com.example.onlineshopping.SellingCompany;
 
-import com.example.ShoppingApp.SellingCompany.SellingCompany;
+import jakarta.ejb.Stateless;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -10,11 +10,11 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
 
-@Path("/v1/sellingCompanyCRUD")
+@Path("/v1/sellingCompany")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Stateless
-public class SellingCompanyCRUDService {
+public class SellingCompanyService {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql");
     private EntityManager entityManager = emf.createEntityManager();
 
@@ -62,6 +62,28 @@ public class SellingCompanyCRUDService {
         return password;
     }
 
+    @GET
+    @Path("/login")
+    public String login(SellingCompany sellingCompany){
+        try {
+            entityManager.getTransaction().begin();
+            SellingCompany sellingCompany1 = entityManager.find(SellingCompany.class,sellingCompany.getName());
+            if (sellingCompany1 == null) {
+                entityManager.getTransaction().rollback();
+                return "Selling Company does not exist";
+            }
+            if (sellingCompany1.getPassword().equals(sellingCompany.getPassword())) {
+                entityManager.getTransaction().commit();
+                return "Logged in Successfully ";
+            }
+
+            return "Wrong password";
+
+        } catch (SecurityException | IllegalStateException e) {
+            e.printStackTrace();
+            return "Error while logging in";
+        }
+    }
     @GET
     @Path("/getAllSellingCompanies")
     public List<SellingCompany> getAllSellingCompanies() {

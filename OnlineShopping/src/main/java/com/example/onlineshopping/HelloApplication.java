@@ -1,9 +1,9 @@
-package com.example.ShoppingApp;
+package com.example.onlineshopping;
 
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
 @ApplicationPath("/api")
-public class ShoppingApplication extends Application {
+public class HelloApplication extends Application {
 
 }

@@ -1,4 +1,4 @@
-package com.example.ShoppingApp.SellingCompany;
+package com.example.onlineshopping.SellingCompany;
 
 import jakarta.persistence.*;
 import lombok.*;
