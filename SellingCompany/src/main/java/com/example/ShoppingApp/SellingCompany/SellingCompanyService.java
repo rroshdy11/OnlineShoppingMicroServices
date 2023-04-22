@@ -19,7 +19,7 @@ import java.io.Serializable;
 @Consumes(MediaType.APPLICATION_JSON)
 @Stateful
 @SessionScoped
-public class SellingCompanyController implements Serializable {
+public class SellingCompanyService implements Serializable {
 
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql");
     private EntityManager entityManager = emf.createEntityManager();
