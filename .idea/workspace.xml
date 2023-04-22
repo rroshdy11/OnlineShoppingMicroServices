@@ -11,140 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1c0559-209e-4f65-abbe-bc766b7c77cc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AdminServices/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdmistrationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SellingCompany/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Adminwar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Shoppingwar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/AdminService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellingCompany/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellingCompany/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellingCompany/src/main/java/SellingCompany/SellingCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingCompany/SellingCompany.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellingCompany/src/main/java/SellingCompany/SellingLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingLogs/SellingLogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/sellingcompany/SellingCompanyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/ShoppingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/sellingcompany/SellingCompanyResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingCompany/SellingCompanyResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/sellingcompany/SellingLogsResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingLogs/SellingLogsResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SellingCompany/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SellingCompany/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.idea/ShippingCompanyServices.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.idea/jpa-buddy.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.vs/ProjectEvaluation/shippingcompanyservices.metadata.v6.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.vs/ProjectEvaluation/shippingcompanyservices.projects.v6.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.vs/ShippingCompanyServices/DesignTimeBuild/.dtbcache.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.vs/ShippingCompanyServices/FileContentIndex/083d228c-59ce-4adf-af75-4df2b6da0b83.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.vs/ShippingCompanyServices/FileContentIndex/887b217f-ca56-4e3d-82ae-944bfae04843.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.vs/ShippingCompanyServices/FileContentIndex/a2b3aea1-15c3-4e74-b5fb-238c33a1831b.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.vs/ShippingCompanyServices/FileContentIndex/cc24ff90-898a-48c2-b09b-c247cf3e455a.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.vs/ShippingCompanyServices/FileContentIndex/read.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.vs/ShippingCompanyServices/config/applicationhost.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.vs/ShippingCompanyServices/v17/.futdcache.v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/.vs/ShippingCompanyServices/v17/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/Controllers/ShippingCompanyController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/Models/Context.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/Models/ShippingCompany.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/Repository/ShippingCompanyInterface.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/Repository/ShippingCompanyRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/ShippingCompanyServices.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/ShippingCompanyServices.csproj.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Azure.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Azure.Identity.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Extensions.Caching.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Extensions.Options.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Identity.Client.Extensions.Msal.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Identity.Client.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.OpenApi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.SqlServer.Server.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/ShippingCompanyServices.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/ShippingCompanyServices.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/ShippingCompanyServices.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/ShippingCompanyServices.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/ShippingCompanyServices.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/System.Drawing.Common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/System.Memory.Data.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/System.Security.Permissions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/System.Windows.Extensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.GlobalUsings.g.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.MvcApplicationPartsAssemblyInfo.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.csproj.AssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.csproj.BuildWithSkipAnalyzers" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.genruntimeconfig.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ShippingCompanyServices.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/apphost.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/ref/ShippingCompanyServices.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/refint/ShippingCompanyServices.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/staticwebassets.build.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/staticwebassets/msbuild.build.ShippingCompanyServices.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.ShippingCompanyServices.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.ShippingCompanyServices.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/ShippingCompanyServices.csproj.nuget.dgspec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/ShippingCompanyServices.csproj.nuget.g.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/ShippingCompanyServices.csproj.nuget.g.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/project.assets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingCompanyServices/ShippingCompanyServices/obj/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingLogs/SellingLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingLogs/SellingLogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingLogs/SellingLogsResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/SellingCompany/src/main/java/com/example/ShoppingApp/SellingLogs/SellingLogsResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -273,6 +144,7 @@
       <workItem from="1682004156000" duration="159000" />
       <workItem from="1682004542055" duration="693000" />
       <workItem from="1682117507323" duration="828000" />
+      <workItem from="1682177870607" duration="161000" />
     </task>
     <servers />
   </component>

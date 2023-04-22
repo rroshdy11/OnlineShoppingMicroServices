@@ -41,7 +41,7 @@ public class SellingLogsResource {
 
     @DELETE
     @Path("/delete/{id}")
-    public String deleteAdmin(@PathParam("id") int id) {
+    public String deleteLog(@PathParam("id") int id) {
         try {
             entityManager.getTransaction().begin();
             SellingLogs sellingLog = entityManager.find(SellingLogs.class, id);
