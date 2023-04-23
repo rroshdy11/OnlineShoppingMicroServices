@@ -1,5 +1,7 @@
+
 package com.example.onlineshopping.SellingCompany;
 
+import com.example.onlineshopping.Product.Product;
 import jakarta.ejb.Stateless;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
@@ -19,12 +21,13 @@ public class SellingCompanyService {
     private EntityManager entityManager = emf.createEntityManager();
 
     @POST
-    @Path("/add/{sellingCompanyName}")
-    public String addSellingCompany(@PathParam("sellingCompanyName") String sellingCompanyName) {
+    @Path("/add")
+    public String addSellingCompany(SellingCompany sellingCompany) {
         try {
             entityManager.getTransaction().begin();
             String sellingCompanyPassword=generatePassword();
-            SellingCompany sellingCompany = new SellingCompany(sellingCompanyName,sellingCompanyPassword);
+            sellingCompany.setPassword(sellingCompanyPassword);
+            sellingCompany.setBalance(0);
             //if user exists return error
             SellingCompany sellingCompany1 = entityManager.find(SellingCompany.class, sellingCompany.getName());
             if (sellingCompany1 != null) {
@@ -62,28 +65,7 @@ public class SellingCompanyService {
         return password;
     }
 
-    @GET
-    @Path("/login")
-    public String login(SellingCompany sellingCompany){
-        try {
-            entityManager.getTransaction().begin();
-            SellingCompany sellingCompany1 = entityManager.find(SellingCompany.class,sellingCompany.getName());
-            if (sellingCompany1 == null) {
-                entityManager.getTransaction().rollback();
-                return "Selling Company does not exist";
-            }
-            if (sellingCompany1.getPassword().equals(sellingCompany.getPassword())) {
-                entityManager.getTransaction().commit();
-                return "Logged in Successfully ";
-            }
 
-            return "Wrong password";
-
-        } catch (SecurityException | IllegalStateException e) {
-            e.printStackTrace();
-            return "Error while logging in";
-        }
-    }
     @GET
     @Path("/getAllSellingCompanies")
     public List<SellingCompany> getAllSellingCompanies() {
@@ -106,5 +88,63 @@ public class SellingCompanyService {
             e.printStackTrace();
             return "Error while deleting";
         }
+    }
+    @GET
+    @Path("/login")
+    public String login(SellingCompany sellingCompany) {
+        try {
+            entityManager.getTransaction().begin();
+            SellingCompany sellingCompany1 = entityManager.find(SellingCompany.class, sellingCompany.getName());
+            if (sellingCompany1 == null) {
+                return "Selling Company does not exist";
+            }
+            if(sellingCompany1.getPassword().equals(sellingCompany.getPassword())){
+                return "Login Successfully";
+            }
+            return "Wrong Password";
+        } catch (SecurityException | IllegalStateException e) {
+            e.printStackTrace();
+            return "Error while logging in";
+        }
+
+    }
+    @POST
+    @Path("/addProduct/{companyname}")
+    //add product to selling company
+    public String addProduct(@PathParam("companyname") String companyName ,Product product) {
+        try {
+            entityManager.getTransaction().begin();
+            SellingCompany sellingCompany = entityManager.find(SellingCompany.class, companyName);
+            if (sellingCompany == null) {
+                return "Selling Company does not exist";
+            }
+            product.setSellingCompany(sellingCompany);
+            sellingCompany.getProducts().add(product);
+            sellingCompany.setProducts(sellingCompany.getProducts());
+            entityManager.merge(sellingCompany);
+            entityManager.persist(product);
+            entityManager.getTransaction().commit();
+            return "Product added successfully" ;
+        } catch (SecurityException | IllegalStateException e) {
+            e.printStackTrace();
+            return "Error while adding product";
+        }
+
+    }
+    @GET
+    @Path("/getProducts/{companyname}")
+    public List<Product> getProducts(@PathParam("companyname") String companyName) {
+        try {
+            entityManager.getTransaction().begin();
+            SellingCompany sellingCompany = entityManager.find(SellingCompany.class, companyName);
+            if (sellingCompany == null) {
+                return null;
+            }
+            return sellingCompany.getProducts();
+        } catch (SecurityException | IllegalStateException e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
 }
