@@ -6,7 +6,7 @@
     <persistence-unit name="mysql" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.example.onlineshopping.SellingCompany.SellingCompany</class>
-        <class>com.example.onlineshopping.SellingLogs.SellingLogs</class>
+        <class>com.example.onlineshopping.SellingLogs.SellingLog</class>
         <class>com.example.onlineshopping.Customer.Customer</class>
         <class>com.example.onlineshopping.Product.Product</class>
         <properties>

@@ -9,7 +9,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
 
-@Path("/v1/sellingLogs")
+@Path("/v1/order")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Singleton
@@ -20,10 +20,10 @@ public class SellingLogsResource {
 
     @POST
     @Path("/add")
-    public String addToLog( SellingLogs sellingLogs) {
+    public String addToLog( SellingLog order) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(sellingLogs);
+            entityManager.persist(order);
             entityManager.getTransaction().commit();
             return "Log Saved Successfully" ;
         } catch (SecurityException | IllegalStateException e) {
@@ -35,8 +35,8 @@ public class SellingLogsResource {
 
     @GET
     @Path("/getAllSellingLogs")
-    public List<SellingLogs> getAllSellingLogs() {
-        return entityManager.createQuery("SELECT s FROM SellingLogs s", SellingLogs.class).getResultList();
+    public List<SellingLog> getAllSellingLogs() {
+        return entityManager.createQuery("SELECT s FROM SellingLog s", SellingLog.class).getResultList();
     }
 
     @DELETE
@@ -44,7 +44,7 @@ public class SellingLogsResource {
     public String deleteLog(@PathParam("id") int id) {
         try {
             entityManager.getTransaction().begin();
-            SellingLogs sellingLog = entityManager.find(SellingLogs.class, id);
+            SellingLog sellingLog = entityManager.find(SellingLog.class, id);
             if (sellingLog == null) {
                 entityManager.getTransaction().rollback();
                 return "Selling Company does not exist";

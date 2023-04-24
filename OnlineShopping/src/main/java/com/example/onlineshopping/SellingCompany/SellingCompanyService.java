@@ -10,6 +10,7 @@ import jakarta.persistence.Persistence;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Path("/v1/sellingCompany")
@@ -33,6 +34,7 @@ public class SellingCompanyService {
             if (sellingCompany1 != null) {
                 return "Selling Company already exists";
             }
+            sellingCompany.setProducts(new ArrayList<Product>());
             entityManager.persist(sellingCompany);
             entityManager.getTransaction().commit();
             return "Selling Company added successfully" ;
@@ -144,6 +146,25 @@ public class SellingCompanyService {
         } catch (SecurityException | IllegalStateException e) {
             e.printStackTrace();
             return null;
+        }
+
+    }
+    @POST
+    @Path("/addBalance/{companyname}/{balance}")
+    public String addBalance(@PathParam("companyname") String companyName ,@PathParam("balance") float balance) {
+        try {
+            entityManager.getTransaction().begin();
+            SellingCompany sellingCompany = entityManager.find(SellingCompany.class, companyName);
+            if (sellingCompany == null) {
+                return "Selling Company does not exist";
+            }
+            sellingCompany.setBalance(sellingCompany.getBalance()+balance);
+            entityManager.merge(sellingCompany);
+            entityManager.getTransaction().commit();
+            return "Balance added successfully" ;
+        } catch (SecurityException | IllegalStateException e) {
+            e.printStackTrace();
+            return "Error while adding balance";
         }
 
     }

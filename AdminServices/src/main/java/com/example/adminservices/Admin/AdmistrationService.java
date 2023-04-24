@@ -14,18 +14,18 @@ import java.net.http.HttpResponse;
 @Stateless
 public class AdmistrationService {
     @POST
-    @Path("/addSellingCompany/{sellingCompanyName}")
-    public String addSellingCompany(@PathParam("sellingCompanyName") String sellingCompanyName) {
+    @Path("/addSellingCompany")
+    public String addSellingCompany(String sellingCompany) {
 
         //send HTTPrequest to selling company to add selling company
-        String url = "http://localhost:8080/SellingCompany-1.0-SNAPSHOT/api/v1/sellingCompany/add/" + sellingCompanyName;
+        String url = "http://localhost:8080/OnlineShopping-1.0-SNAPSHOT/api/v1/sellingCompany/add";
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpResponse<String> response = client.send(HttpRequest.newBuilder()
                     .uri(URI.create(url))
                     .header("Content-Type", "application/json")
                     .timeout(java.time.Duration.ofMinutes(1))
-                    .POST(HttpRequest.BodyPublishers.noBody())
+                    .POST(HttpRequest.BodyPublishers.ofString(sellingCompany))
                     .build(), HttpResponse.BodyHandlers.ofString());
             return response.body();
         } catch (Exception e) {
@@ -39,7 +39,7 @@ public class AdmistrationService {
     @Path("/getAllSellingCompanies")
     public String getAllSellingCompanies() {
         //send HTTPrequest to selling company to get all selling companies
-        String url = "http://localhost:8080/SellingCompany-1.0-SNAPSHOT/api/v1/sellingCompany/getAllSellingCompanies";
+        String url = "http://localhost:8080/OnlineShopping-1.0-SNAPSHOT/api/v1/sellingCompany/getAllSellingCompanies";
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpResponse<String> response = client.send(HttpRequest.newBuilder()
@@ -54,4 +54,5 @@ public class AdmistrationService {
             return null;
         }
     }
+
 }
