@@ -7,6 +7,7 @@ import jakarta.persistence.Persistence;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Path("/v1/order")
@@ -39,6 +40,22 @@ public class SellingLogsResource {
         return entityManager.createQuery("SELECT s FROM SellingLog s", SellingLog.class).getResultList();
     }
 
+    //get all Selling Logs with State =Shipping Request and Shipping Company = null and Shipping Address={Geos}
+    @GET
+    @Path("/getShippingRequests/{Geo}")
+    public List<SellingLog> getShippingRequests(@PathParam("Geo") String geo) {
+        String [] geoArray = geo.split(",");
+        List<SellingLog> sellingLog= entityManager.createQuery("SELECT s FROM SellingLog s WHERE s.shippingState = 'Shipping Request' AND s.shippingCompanyName IS NULL", SellingLog.class).getResultList();
+        List<SellingLog> sellingLogsInGeo=new ArrayList<>();
+        for(SellingLog sellingLog1:sellingLog){
+            for(String geo1:geoArray){
+                if(sellingLog1.getShippingAddress().contains(geo1)){
+                    sellingLogsInGeo.add(sellingLog1);
+                }
+            }
+        }
+        return sellingLogsInGeo;
+    }
     @DELETE
     @Path("/delete/{id}")
     public String deleteLog(@PathParam("id") int id) {

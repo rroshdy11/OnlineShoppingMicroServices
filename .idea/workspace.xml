@@ -3,8 +3,7 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="AdminServices:war exploded" />
-      <artifact name="ShippingService:war exploded" />
-      <artifact name="ShoppingApp:war exploded" />
+      <artifact name="OnlineShopping:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -12,19 +11,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1c0559-209e-4f65-abbe-bc766b7c77cc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingLogs/SellingLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdmistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdmistrationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopping/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdmistrationService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingCompany/SellingCompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingCompany/SellingCompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingLogs/SellingLogs.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingLogs/SellingLogsResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingLogs/SellingLogsResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/artifacts/ShippingService_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/artifacts/ShippingService_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/src/main/java/com/example/shippingservice/ShippingApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/src/main/java/com/example/shippingservice/ShippingCompany/ShippingCompanyCRUDService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/src/main/java/com/example/shippingservice/ShippingCompany/shippingCompany.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/src/main/resources/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShippingService/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,9 +89,6 @@
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="AdminServices:war exploded">
-          <settings />
-        </artifact>
-        <artifact name="ShippingService:war exploded">
           <settings />
         </artifact>
         <artifact name="OnlineShopping:war exploded">
@@ -148,7 +155,6 @@
       <method v="2">
         <option name="BuildArtifacts" enabled="true">
           <artifact name="AdminServices:war exploded" />
-          <artifact name="ShippingService:war exploded" />
           <artifact name="OnlineShopping:war exploded" />
         </option>
       </method>
@@ -168,7 +174,7 @@
       <workItem from="1682004542055" duration="693000" />
       <workItem from="1682117507323" duration="828000" />
       <workItem from="1682177870607" duration="6189000" />
-      <workItem from="1682362095110" duration="978000" />
+      <workItem from="1682362095110" duration="9706000" />
     </task>
     <servers />
   </component>

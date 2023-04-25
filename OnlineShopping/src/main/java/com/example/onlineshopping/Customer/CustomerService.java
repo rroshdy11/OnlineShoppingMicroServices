@@ -86,17 +86,9 @@ public class CustomerService implements Serializable {
         return "Logged out successfully";
     }
     @GET
-    @Path("/getAllCustomers")
+    @Path("/getAll")
     public List<Customer> getAllCustomers(){
-        try {
-            entityManager.getTransaction().begin();
-            List<Customer> customers = entityManager.createQuery("SELECT c FROM Customer c").getResultList();
-            entityManager.getTransaction().commit();
-            return customers;
-        } catch (SecurityException | IllegalStateException e) {
-            e.printStackTrace();
-            return null;
-        }
+        return (List<Customer>) entityManager.createQuery("SELECT c FROM Customer c").getResultList();
     }
     @GET
     @Path("/getCustomer")
@@ -195,8 +187,8 @@ public class CustomerService implements Serializable {
         }
     }
     @GET
-    @Path("/BuyProducts/{shippingCompanyName}")
-    public String BuyProducts(@Context HttpServletRequest request,@PathParam("shippingCompanyName") String shippingCompanyName){
+    @Path("/BuyProducts")
+    public String BuyProducts(@Context HttpServletRequest request){
         if(request.getSession(false).getAttribute("userName")==null){
             return "You are not logged in";
         }
@@ -229,8 +221,7 @@ public class CustomerService implements Serializable {
                                 "\"productId\":\"" + product.getProductId() + "\"," +
                                 "\"sellingCompanyName\":\"" + product.getSellingCompany().getName() + "\"," +
                                 "\"shippingAddress\":\"" + customer1.getAddress() + "\"," +
-                                "\"shippingState\":\"" + "Shipping Request" + "\"," +
-                                "\"shippingCompanyName\":\"" + shippingCompanyName + "\"}"
+                                "\"shippingState\":\"" + "Shipping Request" + "\"" + "}"
 
                         ))
                         .header("Content-Type", "application/json")

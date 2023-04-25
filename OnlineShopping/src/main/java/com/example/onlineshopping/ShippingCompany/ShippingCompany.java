@@ -1,4 +1,4 @@
-package com.example.shippingservice.ShippingCompany;
+package com.example.onlineshopping.ShippingCompany;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,10 +12,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-public class shippingCompany {
+public class ShippingCompany {
     @Id
     private String name;
-
     private String password;
     private String geography;
 
