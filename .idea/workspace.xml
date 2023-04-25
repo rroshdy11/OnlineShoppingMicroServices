@@ -11,30 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1c0559-209e-4f65-abbe-bc766b7c77cc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdmistrationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingLogs/SellingLogsResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingLogs/SellingLogsResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/artifacts/ShippingService_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/artifacts/ShippingService_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/src/main/java/com/example/shippingservice/ShippingApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/src/main/java/com/example/shippingservice/ShippingCompany/ShippingCompanyCRUDService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/src/main/java/com/example/shippingservice/ShippingCompany/shippingCompany.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/src/main/resources/META-INF/beans.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShippingService/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,24 +45,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Last FCAI/OnlineShoppingMicroServices",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Last FCAI/OnlineShoppingMicroServices&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="JBoss/WildFly 27.0.0.Beta16-redhat-00004" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 27.0.0.Beta16-redhat-00004" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -174,7 +153,8 @@
       <workItem from="1682004542055" duration="693000" />
       <workItem from="1682117507323" duration="828000" />
       <workItem from="1682177870607" duration="6189000" />
-      <workItem from="1682362095110" duration="9706000" />
+      <workItem from="1682362095110" duration="11556000" />
+      <workItem from="1682437248810" duration="3167000" />
     </task>
     <servers />
   </component>
