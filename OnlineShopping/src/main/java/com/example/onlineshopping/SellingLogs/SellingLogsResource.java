@@ -1,12 +1,19 @@
 package com.example.onlineshopping.SellingLogs;
 
+import jakarta.annotation.Resource;
+import jakarta.ejb.MessageDriven;
 import jakarta.ejb.Singleton;
+import jakarta.jms.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import java.io.Serializable;
+import java.lang.IllegalStateException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,9 +21,12 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Singleton
-public class SellingLogsResource {
+
+public class SellingLogsResource{
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql");
     private EntityManager entityManager = emf.createEntityManager();
+    @Resource(mappedName = "java:/jms/queue/orders")
+    private Queue shippingRequestsQueue;
 
 
     @POST
@@ -72,6 +82,49 @@ public class SellingLogsResource {
         } catch (SecurityException | IllegalStateException e) {
             e.printStackTrace();
             return "Error while deleting";
+        }
+    }
+
+
+    public void submitOrder(SellingLog request) {
+        try {
+            Context context = new InitialContext();
+            ConnectionFactory connectionFactory = (ConnectionFactory) context.lookup("java:/ConnectionFactory");
+            Connection connection = connectionFactory.createConnection();
+            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+            MessageProducer producer = session.createProducer(this.shippingRequestsQueue);
+            ObjectMessage message = session.createObjectMessage();
+            String text = request.getCustomerName()+","+
+                    "(Your Address:"+request.getShippingAddress()+"):"+"( Your Product ID:"+request.getProductId()+"):"+
+                    "(Your Selling Company Name:"+request.getSellingCompanyName()+"):"+
+                    "(Your Shipping Company Name:"+request.getShippingCompanyName()+")";
+            message.setObject(text);
+            producer.send(message);
+            session.close();
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @GET
+    @Path("/proccessShippingRequest/{id}/{shippingCompanyName}")
+    public String proccessShippingRequest(@PathParam("id") int id,@PathParam("shippingCompanyName") String shippingCompanyName) {
+        try {
+            entityManager.getTransaction().begin();
+            SellingLog sellingLog = entityManager.find(SellingLog.class, id);
+            if (sellingLog == null) {
+                entityManager.getTransaction().rollback();
+                return "Selling Log does not exist";
+            }
+            sellingLog.setShippingState("Shipping Company Assigned");
+            sellingLog.setShippingCompanyName(shippingCompanyName);
+            submitOrder(sellingLog);
+            entityManager.merge(sellingLog);
+            entityManager.getTransaction().commit();
+            return "Selling Log Updated Successfully";
+        } catch (SecurityException | IllegalStateException e) {
+            e.printStackTrace();
+            return "Error while updating";
         }
     }
 }

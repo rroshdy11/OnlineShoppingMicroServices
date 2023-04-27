@@ -3,9 +3,14 @@ package com.example.onlineshopping.Customer;
 import com.example.onlineshopping.Product.Product;
 import com.google.gson.Gson;
 import jakarta.ejb.EJB;
+import jakarta.ejb.MessageDriven;
 import jakarta.ejb.Stateful;
 import jakarta.ejb.Stateless;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.jms.JMSException;
+import jakarta.jms.Message;
+import jakarta.jms.MessageListener;
+import jakarta.jms.TextMessage;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -28,6 +33,7 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 @SessionScoped
 @Stateful
+
 public class CustomerService implements Serializable {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql");
     private EntityManager entityManager = emf.createEntityManager();
@@ -124,7 +130,7 @@ public class CustomerService implements Serializable {
     @DELETE
     @Path("/removeProductFromCart/{productID}")
     public String removeProductFromCart(@Context HttpServletRequest request,@PathParam("productID") int productID){
-        if(request.getSession(false).getAttribute("userName")==null){
+        if(request.getSession().getAttribute("userName")==null){
             return "You are not logged in";
         }
         try {
@@ -147,7 +153,7 @@ public class CustomerService implements Serializable {
     @GET
     @Path("/getCart")
     public List<Product> getCart(@Context HttpServletRequest request){
-        if(request.getSession(false).getAttribute("userName")==null){
+        if(request.getSession().getAttribute("userName")==null){
             return null;
         }
         return customer.getCart();
@@ -247,4 +253,16 @@ public class CustomerService implements Serializable {
         }
     }
 
+
+    @GET
+    @Path("/getNotifications/{customerName}")
+    public List<CustomerNotification> getNotifications(@Context HttpServletRequest request,@PathParam("customerName") String customerName){
+        //get the Customer from the database
+        Customer customer1 = entityManager.find(Customer.class,customerName);
+        if(customer==null){
+            return null;
+        }
+        //get the notifications from the database
+        return new ArrayList<>(customer1.getCustomerNotifications());
+    }
 }

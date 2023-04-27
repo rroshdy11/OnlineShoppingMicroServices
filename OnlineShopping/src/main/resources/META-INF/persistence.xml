@@ -10,6 +10,7 @@
         <class>com.example.onlineshopping.Customer.Customer</class>
         <class>com.example.onlineshopping.Product.Product</class>
         <class>com.example.onlineshopping.ShippingCompany.ShippingCompany</class>
+        <class>com.example.onlineshopping.Customer.CustomerNotification</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/onlineshoping"/>

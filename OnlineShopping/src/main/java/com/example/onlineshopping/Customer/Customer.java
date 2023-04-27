@@ -3,10 +3,7 @@ package com.example.onlineshopping.Customer;
 import com.example.onlineshopping.Product.Product;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.ejb.Stateful;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
@@ -31,4 +28,6 @@ public class Customer {
     private float balance;
     @Transient
     private List<Product> cart;
+    @OneToMany(mappedBy = "customer" , cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<CustomerNotification> customerNotifications;
 }
