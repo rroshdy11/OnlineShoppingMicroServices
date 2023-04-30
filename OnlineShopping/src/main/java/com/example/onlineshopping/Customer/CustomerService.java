@@ -239,7 +239,9 @@ public class CustomerService implements Serializable {
                     return "Error while buying products";
                 }
             }
-            customer1.setCart(new ArrayList<Product>());
+            this.customer.setCart(new ArrayList<>());
+            this.customer.setBalance(customer1.getBalance());
+
             entityManager.merge(customer1);
             entityManager.getTransaction().commit();
             return "Products bought successfully";
@@ -256,7 +258,7 @@ public class CustomerService implements Serializable {
 
     @GET
     @Path("/getNotifications/{customerName}")
-    public List<CustomerNotification> getNotifications(@Context HttpServletRequest request,@PathParam("customerName") String customerName){
+    public List<CustomerNotification> getNotifications(@PathParam("customerName") String customerName){
         //get the Customer from the database
         Customer customer1 = entityManager.find(Customer.class,customerName);
         if(customer==null){

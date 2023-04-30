@@ -11,8 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1c0559-209e-4f65-abbe-bc766b7c77cc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Product/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/CorsFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/CorsFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/ShippingCompany/ShippingCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/ShippingCompany/ShippingCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/ShippingCompany/ShippingCompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/ShippingCompany/ShippingCompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-app/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-app/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,24 +56,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Last FCAI/OnlineShoppingMicroServices&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Last FCAI/OnlineShoppingMicroServices/AdminServices/src/main/java/com/example/adminservices",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Last FCAI\OnlineShoppingMicroServices\AdminServices\src\main\java\com\example\adminservices" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.onlineshopping" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="JBoss/WildFly 27.0.0.Beta16-redhat-00004" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 27.0.0.Beta16-redhat-00004" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -154,6 +174,8 @@
       <workItem from="1682177870607" duration="6189000" />
       <workItem from="1682362095110" duration="11556000" />
       <workItem from="1682437248810" duration="3167000" />
+      <workItem from="1682703397066" duration="974000" />
+      <workItem from="1682787407706" duration="22621000" />
     </task>
     <servers />
   </component>

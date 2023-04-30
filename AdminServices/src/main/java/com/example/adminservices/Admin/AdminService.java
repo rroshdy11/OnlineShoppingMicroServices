@@ -29,9 +29,9 @@ public class AdminService implements Serializable {
     public String register( Admin admin ){
        return adminBean.addAdmin(admin);
     }
-    @GET
+    @POST
     @Path("/login")
-    public String login(Admin admin){
+    public Response login(Admin admin){
           return adminBean.validate(admin);
     }
     @GET
@@ -146,6 +146,45 @@ public class AdminService implements Serializable {
                     .header("Content-Type", "application/json")
                     .timeout(java.time.Duration.ofMinutes(1))
                     .GET()
+                    .build(), HttpResponse.BodyHandlers.ofString());
+            return response.body();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @DELETE
+    @Path("/deleteShippingCompany/{name}")
+    public String deleteShippingCompany(@PathParam("name") String name) {
+        //send HTTPrequest to selling company to delete selling company
+        String url = "http://localhost:8080/OnlineShopping-1.0-SNAPSHOT/api/v1/shippingCompany/deleteShippingCompany/" + name;
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpResponse<String> response = client.send(HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .header("Content-Type", "application/json")
+                    .timeout(java.time.Duration.ofMinutes(1))
+                    .DELETE()
+                    .build(), HttpResponse.BodyHandlers.ofString());
+            return response.body();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    @DELETE
+    @Path("/deleteSellingCompany/{name}")
+    public String deleteSellingCompany(@PathParam("name") String name) {
+        //send HTTPrequest to selling company to delete selling company
+        String url = "http://localhost:8080/OnlineShopping-1.0-SNAPSHOT/api/v1/sellingCompany/delete/" + name;
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpResponse<String> response = client.send(HttpRequest.newBuilder()
+                    .uri(URI.create(url))
+                    .header("Content-Type", "application/json")
+                    .timeout(java.time.Duration.ofMinutes(1))
+                    .DELETE()
                     .build(), HttpResponse.BodyHandlers.ofString());
             return response.body();
         } catch (Exception e) {

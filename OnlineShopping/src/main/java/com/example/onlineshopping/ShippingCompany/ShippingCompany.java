@@ -14,8 +14,10 @@ import lombok.Setter;
 @Getter
 public class ShippingCompany {
     @Id
-    private String name;
+    private String username;
     private String password;
     private String geography;
+    private String email;
+    private String phone;
 
 }

@@ -7,6 +7,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -36,14 +37,14 @@ public class ShippingCompanyService {
         try {
             entityManager.getTransaction().begin();
             //if user exists return error
-            ShippingCompany shippingCompany1 = entityManager.find(ShippingCompany.class, shippingCompany.getName());
+            ShippingCompany shippingCompany1 = entityManager.find(ShippingCompany.class, shippingCompany.getUsername());
             if (shippingCompany1 != null) {
                 return "Shipping Company already exists";
             }
             shippingCompany.setPassword(generatePassword());
             entityManager.persist(shippingCompany);
             entityManager.getTransaction().commit();
-            return "Registered Successfully";
+            return "Shipping Company added successfully";
         } catch (SecurityException | IllegalStateException e) {
             e.printStackTrace();
             return "Error while registering";
@@ -73,26 +74,26 @@ public class ShippingCompanyService {
         }
         return password;
     }
-    @GET
+    @POST
     @Path("/login")
-    public String login(ShippingCompany ShippingCompany){
+    public Response login(ShippingCompany ShippingCompany){
         try {
             entityManager.getTransaction().begin();
-            ShippingCompany ShippingCompany1 = entityManager.find(ShippingCompany.class, ShippingCompany.getName());
+            ShippingCompany ShippingCompany1 = entityManager.find(ShippingCompany.class, ShippingCompany.getUsername());
             if (ShippingCompany1 == null) {
                 entityManager.getTransaction().rollback();
-                return "Shipping Company does not exist";
+                return Response.status(Response.Status.UNAUTHORIZED).build();
             }
             if (ShippingCompany1.getPassword().equals(ShippingCompany.getPassword())) {
                 entityManager.getTransaction().commit();
-                return "Logged in Successfully ";
+                return Response.ok().entity(ShippingCompany1).build();
             }
 
-            return "Wrong password";
+            return Response.status(Response.Status.UNAUTHORIZED).build();
 
         } catch (SecurityException | IllegalStateException e) {
             e.printStackTrace();
-            return "Error while logging in";
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
     }
 

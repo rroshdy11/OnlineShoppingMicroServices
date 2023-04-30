@@ -1,9 +1,11 @@
 package com.example.adminservices.Admin;
 
+import jakarta.annotation.Resource;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
@@ -29,24 +31,24 @@ public class AdminBean {
             return "Error while registering";
         }
     }
-    public String validate(Admin admin){
+    public Response validate(Admin admin){
         try {
             entityManager.getTransaction().begin();
             Admin admin1 = entityManager.find(Admin.class, admin.getUsername());
             if (admin1 == null) {
                 entityManager.getTransaction().rollback();
-                return "User does not exist";
+                return Response.status(Response.Status.UNAUTHORIZED).build();
             }
             if (admin1.getPassword().equals(admin.getPassword())) {
                 entityManager.getTransaction().commit();
-                return "Login Successful";
+                return Response.ok().entity(admin1).build();
             } else {
                 entityManager.getTransaction().rollback();
-                return "Wrong Password";
+                return Response.status(Response.Status.UNAUTHORIZED).build();
             }
         } catch (SecurityException | IllegalStateException e) {
             e.printStackTrace();
-            return "Error while logging in";
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
     }
 
