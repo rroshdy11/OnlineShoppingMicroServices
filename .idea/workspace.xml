@@ -11,20 +11,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1c0559-209e-4f65-abbe-bc766b7c77cc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/CorsFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/CorsFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/CustomerBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Notifications/NotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Product/ProductBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingCompany/SellingCompanyBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingLogs/SellingLogBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingLogs/SellingLogsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/ShippingCompany/ShippingCompanyBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/java/com/example/adminservices/Admin/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/resources/META-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/resources/META-INF/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminServices/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminServices/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/Admin/AddSelling.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/Admin/AddShipping.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/Admin/AdminHome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/Admin/AdminHome.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/Admin/AllCustomer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/Admin/AllSelling.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/Admin/AllShipping.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/NavBar/NavBar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/Shipping/Shipping.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/Shipping/ShippingHome.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/Shipping/ShippingRequests.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/SignIn/SignIn.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/SignIn/SignIn.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/Components/SignUp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/shopping-app/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/CustomerNotficationBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Notifications/CustomerNotficationBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/CustomerNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Notifications/CustomerNotification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Customer/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/ShippingCompany/ShippingCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/ShippingCompany/ShippingCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/Product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingCompany/SellingCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingCompany/SellingCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingCompany/SellingCompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingCompany/SellingCompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingLogs/SellingLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingLogs/SellingLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/SellingLogs/SellingLogsResource.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/ShippingCompany/ShippingCompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/java/com/example/onlineshopping/ShippingCompany/ShippingCompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-app/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/shopping-app/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopping/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopping/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +107,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Last FCAI/OnlineShoppingMicroServices/AdminServices/src/main/java/com/example/adminservices",
+    "last_opened_file_path": "D:/Last FCAI/OnlineShoppingMicroServices/AdminServices/src/main/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -70,12 +116,13 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Last FCAI\OnlineShoppingMicroServices\AdminServices\src\main\java" />
       <recent name="D:\Last FCAI\OnlineShoppingMicroServices\AdminServices\src\main\java\com\example\adminservices" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -175,7 +222,13 @@
       <workItem from="1682362095110" duration="11556000" />
       <workItem from="1682437248810" duration="3167000" />
       <workItem from="1682703397066" duration="974000" />
-      <workItem from="1682787407706" duration="22621000" />
+      <workItem from="1682787407706" duration="22881000" />
+      <workItem from="1682833747437" duration="5026000" />
+      <workItem from="1682874765547" duration="11246000" />
+      <workItem from="1682892847241" duration="59000" />
+      <workItem from="1682893407171" duration="1251000" />
+      <workItem from="1682898094690" duration="345000" />
+      <workItem from="1682902944849" duration="4849000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,6 @@
-package com.example.onlineshopping.Customer;
+package com.example.onlineshopping.Notifications;
 
+import com.example.onlineshopping.Customer.Customer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;

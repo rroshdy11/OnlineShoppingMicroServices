@@ -16,7 +16,7 @@ import java.util.List;
 @ToString
 public class SellingCompany {
     @Id
-    private String name;
+    private String username;
     private String password;
     private String email;
     private String phone;

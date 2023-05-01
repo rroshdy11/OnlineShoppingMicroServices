@@ -1,13 +1,11 @@
 package com.example.onlineshopping.Product;
 
+import jakarta.ejb.EJB;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
@@ -17,12 +15,17 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ProductService {
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql");
-    private EntityManager entityManager = emf.createEntityManager();
+    @EJB
+    private ProductBean productBean;
 
     @GET
     @Path("/getAllProducts")
     public List<Product> getAllProducts() {
-        return entityManager.createQuery("SELECT p FROM Product p", Product.class).getResultList();
+        return productBean.getAll();
+    }
+    @GET
+    @Path("/getProductById/{id}")
+    public Product getProductById(@PathParam("id") int id) {
+        return productBean.getProductById(id);
     }
 }

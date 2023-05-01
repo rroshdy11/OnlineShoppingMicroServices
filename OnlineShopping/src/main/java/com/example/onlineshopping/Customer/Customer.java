@@ -1,8 +1,7 @@
 package com.example.onlineshopping.Customer;
 
+import com.example.onlineshopping.Notifications.CustomerNotification;
 import com.example.onlineshopping.Product.Product;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.ejb.Stateful;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,7 +14,6 @@ import java.util.List;
 @Setter
 @Getter
 @ToString
-@Stateful
 public class Customer {
     @Id
     private String username;

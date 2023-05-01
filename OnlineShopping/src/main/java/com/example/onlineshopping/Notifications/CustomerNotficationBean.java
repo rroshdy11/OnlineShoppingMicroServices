@@ -1,17 +1,16 @@
-package com.example.onlineshopping.Customer;
+package com.example.onlineshopping.Notifications;
 
+import com.example.onlineshopping.Customer.Customer;
+import com.example.onlineshopping.Notifications.CustomerNotification;
 import jakarta.ejb.MessageDriven;
 import jakarta.jms.JMSException;
 import jakarta.jms.Message;
 import jakarta.jms.MessageListener;
-import jakarta.jms.TextMessage;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
+
+import java.util.List;
 
 @MessageDriven(
         activationConfig = {
@@ -41,11 +40,15 @@ public class CustomerNotficationBean implements MessageListener {
             customerNotification.setMessage(message1);
             //presist orderRequest in database
             entityManager.getTransaction().begin();
+            //add notification to customer
+            customerNotification.setCustomer(customer);
             entityManager.persist(customerNotification);
+            entityManager.merge(customer);
             entityManager.getTransaction().commit();
         } catch (JMSException e) {
             throw new RuntimeException(e);
         }
 
     }
+
 }

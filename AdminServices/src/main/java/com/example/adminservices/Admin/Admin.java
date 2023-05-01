@@ -14,7 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-@Stateless
+
 public class Admin {
     @Id
     private String username;

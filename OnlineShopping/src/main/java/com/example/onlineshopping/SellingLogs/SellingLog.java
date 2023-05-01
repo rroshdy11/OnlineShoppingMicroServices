@@ -20,5 +20,9 @@ public class SellingLog {
     private String customerName;
     private String shippingCompanyName;
     private String shippingAddress;
+    //when the selling log is created, the shipping state is set to "shipping request"
+    //when the shipping company accepts the shipping request, the shipping state is set to "Shipping Company Assigned"
+    //when the shipping company delivers the product, the shipping state is set to "Delivered"
     private String shippingState;
+
 }

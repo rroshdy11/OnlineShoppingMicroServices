@@ -1,37 +1,27 @@
 package com.example.onlineshopping.SellingLogs;
 
 import jakarta.annotation.Resource;
-import jakarta.ejb.MessageDriven;
 import jakarta.ejb.Singleton;
 import jakarta.jms.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.PathParam;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import java.io.Serializable;
 import java.lang.IllegalStateException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/v1/order")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
 @Singleton
-
-public class SellingLogsResource{
+public class SellingLogBean {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql");
     private EntityManager entityManager = emf.createEntityManager();
     @Resource(mappedName = "java:/jms/queue/orders")
     private Queue shippingRequestsQueue;
 
-
-    @POST
-    @Path("/add")
-    public String addToLog( SellingLog order) {
+    public String addLog( SellingLog order) {
         try {
             entityManager.getTransaction().begin();
             entityManager.persist(order);
@@ -43,17 +33,12 @@ public class SellingLogsResource{
         }
 
     }
-
-    @GET
-    @Path("/getAllSellingLogs")
-    public List<SellingLog> getAllSellingLogs() {
+    public List<SellingLog> getAllLogs() {
         return entityManager.createQuery("SELECT s FROM SellingLog s", SellingLog.class).getResultList();
     }
 
-    //get all Selling Logs with State =Shipping Request and Shipping Company = null and Shipping Address={Geos}
-    @GET
-    @Path("/getShippingRequests/{Geo}")
-    public List<SellingLog> getShippingRequests(@PathParam("Geo") String geo) {
+
+    public List<SellingLog> getShippingRequestsInGeo(@PathParam("Geo") String geo) {
         String [] geoArray = geo.split(",");
         List<SellingLog> sellingLog= entityManager.createQuery("SELECT s FROM SellingLog s WHERE s.shippingState = 'Shipping Request' AND s.shippingCompanyName IS NULL", SellingLog.class).getResultList();
         List<SellingLog> sellingLogsInGeo=new ArrayList<>();
@@ -66,27 +51,27 @@ public class SellingLogsResource{
         }
         return sellingLogsInGeo;
     }
-    @DELETE
-    @Path("/delete/{id}")
-    public String deleteLog(@PathParam("id") int id) {
+
+    public String acceptShippingRequest(@PathParam("id") int id, @PathParam("shippingCompanyName") String shippingCompanyName) {
         try {
             entityManager.getTransaction().begin();
             SellingLog sellingLog = entityManager.find(SellingLog.class, id);
             if (sellingLog == null) {
                 entityManager.getTransaction().rollback();
-                return "Selling Company does not exist";
+                return "Selling Log does not exist";
             }
-            entityManager.remove(sellingLog);
+            sellingLog.setShippingState("Shipping Company Assigned");
+            sellingLog.setShippingCompanyName(shippingCompanyName);
+            pushToQueue(sellingLog,"Your Shipping Request has been accepted by "+shippingCompanyName+"--> Your Shipping Company Name:"+shippingCompanyName);
+            entityManager.merge(sellingLog);
             entityManager.getTransaction().commit();
-            return "Selling Log Deleted Successfully";
+            return "Selling Log Updated Successfully";
         } catch (SecurityException | IllegalStateException e) {
             e.printStackTrace();
-            return "Error while deleting";
+            return "Error while updating";
         }
     }
-
-
-    public void submitOrder(SellingLog request) {
+    public void pushToQueue(SellingLog request,String addmsg) {
         try {
             Context context = new InitialContext();
             ConnectionFactory connectionFactory = (ConnectionFactory) context.lookup("java:/ConnectionFactory");
@@ -94,7 +79,7 @@ public class SellingLogsResource{
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             MessageProducer producer = session.createProducer(this.shippingRequestsQueue);
             ObjectMessage message = session.createObjectMessage();
-            String text = request.getCustomerName()+","+
+            String text = request.getCustomerName()+","+addmsg+
                     "(Your Address:"+request.getShippingAddress()+"):"+"( Your Product ID:"+request.getProductId()+"):"+
                     "(Your Selling Company Name:"+request.getSellingCompanyName()+"):"+
                     "(Your Shipping Company Name:"+request.getShippingCompanyName()+")";
@@ -106,9 +91,7 @@ public class SellingLogsResource{
             e.printStackTrace();
         }
     }
-    @GET
-    @Path("/proccessShippingRequest/{id}/{shippingCompanyName}")
-    public String proccessShippingRequest(@PathParam("id") int id,@PathParam("shippingCompanyName") String shippingCompanyName) {
+    public String assignDelivered(@PathParam("id") int id) {
         try {
             entityManager.getTransaction().begin();
             SellingLog sellingLog = entityManager.find(SellingLog.class, id);
@@ -116,9 +99,7 @@ public class SellingLogsResource{
                 entityManager.getTransaction().rollback();
                 return "Selling Log does not exist";
             }
-            sellingLog.setShippingState("Shipping Company Assigned");
-            sellingLog.setShippingCompanyName(shippingCompanyName);
-            submitOrder(sellingLog);
+            sellingLog.setShippingState("Delivered");
             entityManager.merge(sellingLog);
             entityManager.getTransaction().commit();
             return "Selling Log Updated Successfully";
@@ -126,5 +107,32 @@ public class SellingLogsResource{
             e.printStackTrace();
             return "Error while updating";
         }
+    }
+
+    public List<SellingLog> getShippingRequestsByShippingCompany(@PathParam("shippingCompanyName") String shippingCompanyName) {
+        return entityManager.createQuery("SELECT s FROM SellingLog s WHERE s.shippingCompanyName = :shippingCompanyName", SellingLog.class).setParameter("shippingCompanyName", shippingCompanyName).getResultList();
+    }
+
+    public String markAsDelivered(String id){
+        try {
+            entityManager.getTransaction().begin();
+            SellingLog sellingLog = entityManager.find(SellingLog.class, Integer.parseInt(id));
+            if (sellingLog == null) {
+                entityManager.getTransaction().rollback();
+                return "Selling Log does not exist";
+            }
+            sellingLog.setShippingState("Delivered");
+            entityManager.merge(sellingLog);
+            entityManager.getTransaction().commit();
+            return "Selling Log Updated Successfully";
+        } catch (SecurityException | IllegalStateException e) {
+            e.printStackTrace();
+            return "Error while updating";
+        }
+
+    }
+
+    public List<SellingLog> getShippingRequestsBySellingCompany(String sellingCompanyName) {
+        return entityManager.createQuery("SELECT s FROM SellingLog s WHERE s.sellingCompanyName = :sellingCompanyName", SellingLog.class).setParameter("sellingCompanyName", sellingCompanyName).getResultList();
     }
 }
