@@ -74,4 +74,9 @@ public class SellingCompanyService {
     public SellingCompany getCompany(@PathParam("companyname") String companyName) {
         return sellingCompanyBean.getSellingCompany(companyName);
     }
+    @DELETE
+    @Path("/deleteProduct/{companyname}/{productname}")
+    public String deleteProduct(@PathParam("companyname") String companyName,@PathParam("productname") String productName) {
+        return sellingCompanyBean.deleteProduct(companyName,productName);
+    }
 }

@@ -17,7 +17,7 @@ import java.util.List;
                 @jakarta.ejb.ActivationConfigProperty(propertyName = "destinationType", propertyValue = "jakarta.jms.Queue"),
                 @jakarta.ejb.ActivationConfigProperty(propertyName = "destination", propertyValue = "java:/jms/queue/orders")
         },
-        mappedName= "java:/jms/queue/orders", name = "OrderMessageBean"  )
+        mappedName= "java:/jms/queue/orders", name = "CustomerNotification"  )
 
 public class CustomerNotficationBean implements MessageListener {
 

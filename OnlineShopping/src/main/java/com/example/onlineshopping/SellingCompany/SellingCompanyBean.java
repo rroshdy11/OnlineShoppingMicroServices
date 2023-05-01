@@ -176,5 +176,27 @@ public class SellingCompanyBean {
         }
 
     }
+    public String deleteProduct(@PathParam("companyname") String companyName ,@PathParam("productname") String productName) {
+        try {
+            entityManager.getTransaction().begin();
+            SellingCompany sellingCompany = entityManager.find(SellingCompany.class, companyName);
+            if (sellingCompany == null) {
+                return "Selling Company does not exist";
+            }
+            Product product = entityManager.find(Product.class, productName);
+            if (product == null) {
+                return "Product does not exist";
+            }
+            sellingCompany.getProducts().remove(product);
+            sellingCompany.setProducts(sellingCompany.getProducts());
+            entityManager.merge(sellingCompany);
+            entityManager.remove(product);
+            entityManager.getTransaction().commit();
+            return "Product Deleted Successfully";
+        } catch (SecurityException | IllegalStateException e) {
+            e.printStackTrace();
+            return "Error while deleting";
+        }
+    }
 
 }
