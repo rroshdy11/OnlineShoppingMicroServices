@@ -79,7 +79,7 @@ public class SellingLogBean {
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             MessageProducer producer = session.createProducer(this.shippingRequestsQueue);
             ObjectMessage message = session.createObjectMessage();
-            String text = request.getCustomerName()+","+addmsg+
+            String text = request.getCustomerName()+","+addmsg+"\n"+
                     "(Your Address:"+request.getShippingAddress()+"):"+"( Your Product ID:"+request.getProductId()+"):"+
                     "(Your Selling Company Name:"+request.getSellingCompanyName()+"):"+
                     "(Your Shipping Company Name:"+request.getShippingCompanyName()+")";
@@ -122,6 +122,7 @@ public class SellingLogBean {
                 return "Selling Log does not exist";
             }
             sellingLog.setShippingState("Delivered");
+            pushToQueue(sellingLog,"Your Shipping Request has been Delivered");
             entityManager.merge(sellingLog);
             entityManager.getTransaction().commit();
             return "Selling Log Updated Successfully";
@@ -134,5 +135,9 @@ public class SellingLogBean {
 
     public List<SellingLog> getShippingRequestsBySellingCompany(String sellingCompanyName) {
         return entityManager.createQuery("SELECT s FROM SellingLog s WHERE s.sellingCompanyName = :sellingCompanyName", SellingLog.class).setParameter("sellingCompanyName", sellingCompanyName).getResultList();
+    }
+
+    public List<SellingLog> getShippingRequestsByCustomer(String customerName) {
+        return entityManager.createQuery("SELECT s FROM SellingLog s WHERE s.customerName = :customerName", SellingLog.class).setParameter("customerName", customerName).getResultList();
     }
 }

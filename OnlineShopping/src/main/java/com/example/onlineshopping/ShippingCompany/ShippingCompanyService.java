@@ -1,6 +1,7 @@
 package com.example.onlineshopping.ShippingCompany;
 
 
+import com.example.onlineshopping.SellingLogs.SellingLog;
 import jakarta.ejb.EJB;
 import jakarta.ejb.Stateless;
 import jakarta.enterprise.context.RequestScoped;
@@ -56,7 +57,7 @@ public class ShippingCompanyService {
     }
     @GET
     @Path("/getAllShippingRequestForShippingCompany/{name}")
-    public String getAllShippingRequestForShippingCompany(@PathParam("name") String name) {
+    public List<SellingLog> getAllShippingRequestForShippingCompany(@PathParam("name") String name) {
            return shippingCompanyBean.getAllShippingRequestForShippingCompany(name);
     }
     @POST
@@ -66,7 +67,7 @@ public class ShippingCompanyService {
     }
     @GET
     @Path("/getMyShippings/{name}")
-    public String getMyShippings(@PathParam("name") String name) {
+    public List<SellingLog> getMyShippings(@PathParam("name") String name) {
         return shippingCompanyBean.getMyShippings(name);
     }
     @POST

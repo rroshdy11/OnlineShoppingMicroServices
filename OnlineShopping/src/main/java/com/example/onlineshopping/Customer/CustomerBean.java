@@ -10,6 +10,7 @@ import jakarta.persistence.Persistence;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.Response;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -45,28 +46,31 @@ public class CustomerBean implements Serializable {
         }
     }
 
-    public String validate(@Context HttpServletRequest request , Customer customer){
+    public Response validate(@Context HttpServletRequest request ,String username , String password){
 
         try {
             entityManager.getTransaction().begin();
-            Customer customer1 = entityManager.find(Customer.class,customer.getUsername());
+            Customer customer1 = entityManager.find(Customer.class,username);
             if (customer1 == null) {
                 entityManager.getTransaction().rollback();
-                return "Customer does not exist";
+                return Response.status(Response.Status.NOT_FOUND).build();
             }
-            if (customer1.getPassword().equals(customer.getPassword())) {
+            if (customer1.getPassword().equals(password)) {
                 customer1.setCart(new ArrayList<Product>());
                 request.getSession(true).setAttribute("userName",customer1.getUsername());
                 this.customer=customer1;
                 entityManager.getTransaction().commit();
-                return "Logged in Successfully ";
+                //send the JSESSIONID to the client IN the response header
+                SessionID sessionID = new SessionID("JSESSIONID="+request.getSession().getId()+"desktop-pf8v4q7; Path=/OnlineShopping-1.0-SNAPSHOT;");
+                return Response.ok().entity(sessionID).build(
+                );
             }
 
-            return "Wrong password";
+            return Response.status(Response.Status.UNAUTHORIZED).build();
 
         } catch (SecurityException | IllegalStateException e) {
             e.printStackTrace();
-            return "Error while logging in";
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
     }
 

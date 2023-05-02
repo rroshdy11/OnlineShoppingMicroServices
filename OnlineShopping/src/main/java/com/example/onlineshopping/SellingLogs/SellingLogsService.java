@@ -75,4 +75,10 @@ public class SellingLogsService{
     public List<SellingLog> getShippingRequestsBySeller(@PathParam("sellerName") String sellerName) {
         return sellingLogBean.getShippingRequestsBySellingCompany(sellerName);
     }
+
+    @GET
+    @Path("/getShippingRequestsByCustomer/{customerName}")
+    public List<SellingLog> getShippingRequestsByCustomer(@PathParam("customerName") String customerName) {
+        return sellingLogBean.getShippingRequestsByCustomer(customerName);
+    }
 }

@@ -119,8 +119,6 @@ public class SellingCompanyBean {
             }
             product.setSellingCompany(sellingCompany);
             sellingCompany.getProducts().add(product);
-            sellingCompany.setProducts(sellingCompany.getProducts());
-            entityManager.merge(sellingCompany);
             entityManager.persist(product);
             entityManager.getTransaction().commit();
             return "Product added successfully" ;

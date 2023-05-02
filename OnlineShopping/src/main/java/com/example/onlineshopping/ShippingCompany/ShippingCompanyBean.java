@@ -1,5 +1,9 @@
 package com.example.onlineshopping.ShippingCompany;
 
+import com.example.onlineshopping.SellingCompany.SellingCompany;
+import com.example.onlineshopping.SellingLogs.SellingLog;
+import com.example.onlineshopping.SellingLogs.SellingLogBean;
+import jakarta.ejb.EJB;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -18,7 +22,8 @@ public class ShippingCompanyBean {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql");
     private EntityManager entityManager = emf.createEntityManager();
 
-
+    @EJB
+    private SellingLogBean sellingLogBean;
     public String create( ShippingCompany shippingCompany) {
         try {
             entityManager.getTransaction().begin();
@@ -103,25 +108,19 @@ public class ShippingCompanyBean {
     public List<ShippingCompany> getShippingCompanyForGeoLocation(@PathParam("location") String location) {
         return entityManager.createQuery("SELECT s FROM ShippingCompany s WHERE s.geography = :location", ShippingCompany.class).setParameter("location", location).getResultList();
     }
-    public String getAllShippingRequestForShippingCompany(@PathParam("name") String name) {
+    public List<SellingLog> getAllShippingRequestForShippingCompany(@PathParam("name") String name) {
         //find the shipping company
         ShippingCompany shippingCompany = entityManager.find(ShippingCompany.class, name);
         if (shippingCompany == null) {
-            return "Shipping Company does not exist";
+            return null;
         }
-        //make Http request to get all shipping requests for this shipping company /getShippingRequests/{Geo}
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/OnlineShopping-1.0-SNAPSHOT/api/v1/order/getShippingRequests/"+shippingCompany.getGeography()))
-                .GET()
-                .header("Content-Type", "application/json")
-                .build();
+
         //send the request
         try {
-            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            return response.body();
+            return sellingLogBean.getShippingRequestsInGeo(shippingCompany.getGeography());
         } catch (Exception e) {
             e.printStackTrace();
-            return "Error while getting shipping requests";
+            return null;
         }
     }
 
@@ -132,54 +131,35 @@ public class ShippingCompanyBean {
             return "Shipping Company does not exist";
         }
         //make Http request to accept shipping request for this shipping company /acceptShippingRequest/{id}/{shippingCompany}
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/OnlineShopping-1.0-SNAPSHOT/api/v1/order/proccessShippingRequest/"+id+"/"+shippingCompany.getUsername()))
-                .PUT(HttpRequest.BodyPublishers.ofString(""))
-                .header("Content-Type", "application/json")
-                .build();
-        //send the request
+
         try {
-            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            return response.body();
+            return sellingLogBean.acceptShippingRequest(id,name);
         } catch (Exception e) {
             e.printStackTrace();
             return "Error while accepting shipping request";
         }
     }
 
-    public String getMyShippings(String name) {
+    public List<SellingLog> getMyShippings(String name) {
         //find the shipping company
         ShippingCompany shippingCompany = entityManager.find(ShippingCompany.class, name);
         if (shippingCompany == null) {
-            return "Shipping Company does not exist";
+            return null;
         }
-        //make Http request to get all shipping requests for this shipping company /getShippingRequests/{Geo}
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/OnlineShopping-1.0-SNAPSHOT/api/v1/order/getShippingRequestsByShippingCompany/"+shippingCompany.getUsername()))
-                .GET()
-                .header("Content-Type", "application/json")
-                .build();
-        //send the request
         try {
-            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            return response.body();
+            return sellingLogBean.getShippingRequestsByShippingCompany(name);
         } catch (Exception e) {
             e.printStackTrace();
-            return "Error while getting shipping requests";
+            return null;
         }
     }
 
     public String markAsDelivered(String id){
-        //make Http request to mark shipping request as delivered /markAsDelivered/{id}
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8080/OnlineShopping-1.0-SNAPSHOT/api/v1/order/markAsDelivered/"+id))
-                .PUT(HttpRequest.BodyPublishers.ofString(""))
-                .header("Content-Type", "application/json")
-                .build();
+
         //send the request
         try {
-            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            return response.body();
+
+            return sellingLogBean.markAsDelivered(id);
         } catch (Exception e) {
             e.printStackTrace();
             return "Error while marking shipping request as delivered";
